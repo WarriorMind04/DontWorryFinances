@@ -8,8 +8,7 @@
 import Foundation
 
 struct ExpenseItem: Codable, Identifiable {
-    var id: UUID = UUID()
-    var category: String
-    var amount: Double
-    var userEdited: Bool? = false
+    let id = UUID()
+    let category: String?
+    let amount: Double?
 }

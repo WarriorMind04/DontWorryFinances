@@ -8,5 +8,6 @@
 import Foundation
 
 struct AIResponse: Codable {
-    var components: [Component]
+    let components: [Component]?
+    
 }

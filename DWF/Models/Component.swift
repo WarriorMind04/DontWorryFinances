@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Component: Codable, Identifiable {
+/*struct Component: Codable, Identifiable {
     var id: UUID = UUID()
     var type: ComponentType
     var data: ComponentData
@@ -21,3 +21,11 @@ enum ComponentType: String, Codable {
     case insight
     case actionButton
 }
+*/
+struct Component: Codable, Identifiable {
+    let id = UUID()
+    let type: String
+    let data: ComponentData
+}
+
+

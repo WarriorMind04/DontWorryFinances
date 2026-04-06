@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ComponentData: Codable {
+/*struct ComponentData: Codable {
     var title: String?
     
     // gastos
@@ -25,4 +25,14 @@ struct ComponentData: Codable {
     
     // acciones
     var action: String?
+}
+*/
+
+struct ComponentData: Codable {
+    let title: String?
+    let items: [ExpenseItem]?
+    let target: Double?
+    let progress: Double?
+    let text: String?
+    let chartData: [ChartItem]?
 }

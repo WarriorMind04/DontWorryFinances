@@ -7,23 +7,24 @@
 
 import SwiftUI
 
+
 struct DynamicView: View {
     var response: AIResponse
     
     var body: some View {
         ScrollView {
-            ForEach(response.components) { component in
+            ForEach(response.components ?? []) { component in  // <-- aquí
                 switch component.type {
-                case .expenseSummary:
+                case "expenseSummary":
                     ExpenseSummaryView(data: component.data)
                     
-                case .goal:
+                case "goal":
                     GoalCardView(data: component.data)
                     
-                case .chart:
+                case "chart":
                     ChartView(data: component.data)
                     
-                case .insight:
+                case "insight":
                     InsightView(text: component.data.text ?? "")
                     
                 default:
@@ -31,23 +32,7 @@ struct DynamicView: View {
                 }
             }
         }
+        .padding()
     }
-}
-
-#Preview {
-    DynamicView(
-        response: AIResponse(components: [
-                    Component(
-                        type: .chart,
-                        data: ComponentData(
-                            title: "Demo Chart",
-                            chartData: [
-                                ChartItem(label: "A", value: 10),
-                                ChartItem(label: "B", value: 20)
-                            ]
-                        )
-                    )
-                ])
-    )
 }
 

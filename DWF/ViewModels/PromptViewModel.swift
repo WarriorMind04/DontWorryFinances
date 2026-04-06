@@ -5,7 +5,7 @@
 //  Created by Jose Miguel Guerrero Jiménez on 31/03/26.
 //
 
-import Foundation
+/*import Foundation
 import Combine
 
 class PromptViewModel: ObservableObject {
@@ -46,6 +46,48 @@ class PromptViewModel: ObservableObject {
             
             self.isLoading = false
             completion(response)
+        }
+    }
+}
+*/
+import Foundation
+import Combine
+
+@MainActor
+class PromptViewModel: ObservableObject {
+    
+    @Published var prompt: String = ""
+    @Published var isLoading = false
+    
+    /*func generateResponse(completion: @escaping (AIResponse) -> Void) {
+        
+        isLoading = true
+        
+        Task {
+            do {
+                let response = try await APIService.shared.generate(prompt: prompt)
+                
+                completion(response)
+                isLoading = false
+                
+            } catch {
+                print("❌ Error:", error)
+                isLoading = false
+            }
+        }
+    }*/
+    func generateResponse(completion: @escaping (AIResponse) -> Void) {
+        isLoading = true
+        
+        Task {
+            do {
+                let response = try await APIService.shared.generate(prompt: prompt)
+                isLoading = false
+                completion(response)
+            } catch {
+                isLoading = false
+                print("❌ Error:", error.localizedDescription)
+            }
         }
     }
 }
