@@ -21,17 +21,17 @@ class PromptViewModel: ObservableObject {
                 Component(
                     type: .expenseSummary,
                     data: ComponentData(
-                        title: "Gastos",
+                        title: "Expenses",
                         items: [
-                            ExpenseItem(category: "Comida", amount: 120),
-                            ExpenseItem(category: "Transporte", amount: 50)
+                            ExpenseItem(category: "Food", amount: 120),
+                            ExpenseItem(category: "Transport", amount: 50)
                         ]
                     )
                 ),
                 Component(
                     type: .goal,
                     data: ComponentData(
-                        title: "Ahorro mensual",
+                        title: "Monthly Savings",
                         target: 300,
                         progress: 170
                     )
@@ -39,7 +39,7 @@ class PromptViewModel: ObservableObject {
                 Component(
                     type: .insight,
                     data: ComponentData(
-                        text: "Puedes reducir gastos en comida"
+                        text: "You could reduce spending on food to reach your goal."
                     )
                 )
             ])

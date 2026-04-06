@@ -5,7 +5,7 @@
 //  Created by Jose Miguel Guerrero Jiménez on 31/03/26.
 //
 
-/*import SwiftUI
+import SwiftUI
 
 struct DynamicView: View {
     var response: AIResponse
@@ -35,6 +35,19 @@ struct DynamicView: View {
 }
 
 #Preview {
-    DynamicView()
+    DynamicView(
+        response: AIResponse(components: [
+                    Component(
+                        type: .chart,
+                        data: ComponentData(
+                            title: "Demo Chart",
+                            chartData: [
+                                ChartItem(label: "A", value: 10),
+                                ChartItem(label: "B", value: 20)
+                            ]
+                        )
+                    )
+                ])
+    )
 }
-*/
+

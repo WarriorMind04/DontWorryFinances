@@ -12,7 +12,7 @@ struct ExpenseSummaryView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(data.title ?? "Gastos")
+            Text(data.title ?? "Expenses")
                 .font(.headline)
             
             ForEach(data.items ?? []) { item in
