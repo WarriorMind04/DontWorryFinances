@@ -32,7 +32,11 @@ struct DynamicView: View {
                 }
             }
         }
-        .padding()
+        //.padding()
     }
+}
+
+#Preview {
+    DynamicView(response: mockResponse)
 }
 
