@@ -7,42 +7,7 @@
 
 import Foundation
 
-/*class APIService {
-    
-    static let shared = APIService()
-    
-    private let baseURL = "https://dwfbackend.onrender.com/api/ai"
-    
-    func generate(prompt: String) async throws -> AIResponse {
-        
-        guard let url = URL(string: "\(baseURL)/generate") else {
-            throw URLError(.badURL)
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let body = [
-            "prompt": prompt
-        ]
-        
-        request.httpBody = try JSONSerialization.data(withJSONObject: body)
-        
-        let (data, response) = try await URLSession.shared.data(for: request)
-        
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 else {
-            throw URLError(.badServerResponse)
-        }
-        
-        // 🔥 Decoding directo a tu modelo
-        let decoded = try JSONDecoder().decode(AIResponse.self, from: data)
-        
-        return decoded
-    }
-}
-*/
+
 class APIService {
     
     static let shared = APIService()

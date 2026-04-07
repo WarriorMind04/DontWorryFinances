@@ -7,25 +7,16 @@
 
 import Foundation
 
-/*struct Component: Codable, Identifiable {
-    var id: UUID = UUID()
-    var type: ComponentType
-    var data: ComponentData
-}
 
-enum ComponentType: String, Codable {
-    case expenseSummary
-    case expenseList
-    case goal
-    case chart
-    case insight
-    case actionButton
-}
-*/
 struct Component: Codable, Identifiable {
     let id = UUID()
     let type: String
     let data: ComponentData
 }
 
-
+enum ComponentType: String, Codable {
+    case expenseSummary
+    case goal
+    case chart
+    case insight
+}
