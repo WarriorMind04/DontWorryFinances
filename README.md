@@ -1,4 +1,4 @@
-# Finance AI Assistant
+# DWFinances!
 
 A SwiftUI iOS app that helps users manage their finances using AI-generated insights and dynamic dashboards.
 
