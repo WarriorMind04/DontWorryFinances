@@ -22,7 +22,7 @@ struct HomeView: View {
                     documentList
                 }
             }
-            .navigationTitle("Finance AI")
+            .navigationTitle("DWFinances!")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
